@@ -42,7 +42,7 @@ const HeroPage: React.FC = () => {
                     <p className={`${styles.tagline}`}>{visibleText.split("\n")[2]}</p>
                 )}
                 {showButton && (
-                    <Link href={'/photos'}>
+                    <Link href={'/role'}>
                         <button className={`${styles.button}`}>Get Started</button>
                     </Link>
                 )}
