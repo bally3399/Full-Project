@@ -1,0 +1,67 @@
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    background-image: url('../asset/background.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding-left: 160px;
+}
+
+.brandName {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 0.2em;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.tagline{
+    font-size: 2rem;
+    color: black;
+
+}
+
+.tagLine{
+    font-size: 2rem;
+    color: black;
+
+}
+
+
+.button {
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    background-color: #0a0a0a; /* Uncommented */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #333; /* Lighter shade for hover effect */
+}
+
+@media (min-width: 768px) {
+    .brandName {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero {
+        background-size: auto 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
