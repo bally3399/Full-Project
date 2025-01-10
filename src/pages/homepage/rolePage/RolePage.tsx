@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { HiArrowLeft, HiBriefcase, HiUser } from 'react-icons/hi';
+import { HiArrowLeft, HiBriefcase } from 'react-icons/hi';
 import Link from 'next/link';
 
 interface RoleCardProps {
