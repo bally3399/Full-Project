@@ -24,12 +24,12 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(!menuOpen)}/>
 
             {menuOpen && (
-                <ul className='md:hidden absolute z-10 top-16 left-0 w-full bg-white shadow-md text-lg'>
-                    <div className='hover:text-blue-300 cursor-pointer p-4 text-black'>Home</div>
-                    <div className='hover:text-gray-600 cursor-pointer p-4 text-black'>Features</div>
-                    <div className='hover:text-gray-600 cursor-pointer p-4 text-black'>Blog</div>
-                    <div className='hover:text-gray-600 cursor-pointer p-4 text-black'>About us</div>
-                    <div className='hover:text-gray-600 cursor-pointer p-4 text-black'>Contact us</div>
+                <ul className='md:hidden absolute z-10 top-16 left-0 w-full bg-black shadow-md text-lg'>
+                    <div className='hover:text-yellow-800 cursor-pointer p-4 text-[#daa520]'>Home</div>
+                    <div className='hover:text-yellow-800 cursor-pointer p-4 text-[#daa520]'>Features</div>
+                    <div className='hover:text-yellow-800 cursor-pointer p-4 text-[#daa520]'>Blog</div>
+                    <div className='hover:text-yellow-800 cursor-pointer p-4 text-[#daa520]'>About us</div>
+                    <div className='hover:text-yellow-800 cursor-pointer p-4 text-[#daa520]'>Contact us</div>
                 </ul>
             )}
         </nav>
