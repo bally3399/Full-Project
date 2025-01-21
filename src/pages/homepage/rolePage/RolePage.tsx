@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { HiArrowLeft, HiBriefcase } from 'react-icons/hi';
 import Link from 'next/link';
+import styles from "@/component/styles.module.css";
 
 interface RoleCardProps {
     role: string;
@@ -15,18 +16,16 @@ interface RoleCardProps {
 const RoleCard: React.FC<RoleCardProps> = ({ role, icon, selectedRole, handleRoleSelect, label }) => {
     return (
         <div
-            className={`border rounded-lg p-6 cursor-pointer flex flex-col items-center justify-center ${
-                selectedRole === role ? 'border-[#093c5e]' : 'border-gray-300'
-            }`}
+            className={`${styles.roleCard} ${selectedRole === role ? styles.selectedRole : ''}`}
             onClick={() => handleRoleSelect(role)}
         >
             {icon}
-            <p className="text-lg font-medium">{label}</p>
+            <p className={styles.roleLabel}>{label}</p>
             <input
                 type="radio"
                 checked={selectedRole === role}
                 onChange={() => handleRoleSelect(role)}
-                className="mt-2"
+                className={styles.radioInput}
             />
         </div>
     );
@@ -44,55 +43,43 @@ const RolePage: React.FC = () => {
             localStorage.setItem('role', selectedRole);
 
             if (selectedRole === 'client' || selectedRole === 'Professional') {
-                window.location.href = '/registerClient';
+                window.location.href = '/dashboard';
             } else if (selectedRole === 'Admin') {
                 window.location.href = '/';
             }
         }
-    }
+    };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-[#ffffff] relative">
-            <div className="absolute top-4 left-4">
+        <div className={styles.rolePage}>
+            <div className={styles.backButtonContainer}>
                 <Link href={'/'}>
-                    <button className="flex items-center text-[#093c5e] hover:text-[#093c5e]">
-                        <HiArrowLeft className="mr-2" /> Back
+                    <button className={styles.backButton}>
+                        <HiArrowLeft className={styles.backIcon} /> Back
                     </button>
                 </Link>
             </div>
-            <h1 className="text-3xl font-semibold mb-6 text-[#093c5e] hidden sm:block">
-                Join as we give you the best fashion designs
+            <h1 className={styles.pageTitle}>
+                Join as we give you the best designs
             </h1>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 p-5">
+            <div className={styles.roleCardsContainer}>
                 <RoleCard
                     role="client"
-                    icon={<HiBriefcase className="text-3xl mb-2" />}
+                    icon={<HiBriefcase className={styles.roleIcon} />}
                     selectedRole={selectedRole}
                     handleRoleSelect={handleRoleSelect}
                     label="I'm a Client"
                 />
-
             </div>
             <button
-                className={`px-6 py-3 rounded-lg font-medium ${
-                    selectedRole
-                        ? 'bg-[#06324e] text-white hover:bg-[#06324e]'
-                        : 'bg-[#007e82] cursor-not-allowed'
-                }`}
+                className={`${styles.joinButton} ${selectedRole ? styles.active : styles.disabled}`}
                 onClick={handleCreateAccount}
                 disabled={!selectedRole}
             >
                 Join
             </button>
-            <p className="mt-4">
-                Already have an account?{' '}
-                <Link href="/designs" className="text-[#06324e] hover:underline">
-                    Log In
-                </Link>
-            </p>
         </div>
-    )
-}
-
+    );
+};
 
 export default RolePage;
