@@ -20,7 +20,7 @@ const Navbar = () => {
                 <div>NEW COLLECTION</div>
                 <AiOutlineShoppingCart/>
             </div>
-            <HiMenu className="text-2xl md:hidden cursor-pointer hover:text-gray-600"
+            <HiMenu className="text-2xl md:hidden cursor-pointer hover:text-yellow-800"
                     onClick={() => setMenuOpen(!menuOpen)}/>
 
             {menuOpen && (

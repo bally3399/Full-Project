@@ -3,11 +3,12 @@ import styles from "@/component/styles.module.css";
 import Navbar from "@/component/navbar/Navbar";
 import Footer from "@/component/footer/Footer";
 import Link from "next/link";
+import ProductCard from "@/pages/product/Product";
 
 const HeroPage: React.FC = () => {
     const tagLine = "🪡"
     const brandName = "Soft Touch";
-    const tagline = "Creatively Made For Kings 🤴";
+    const tagline = "Creatively Made For Kings";
     const [visibleText, setVisibleText] = useState("");
     const [showButton, setShowButton] = useState(false);
 
@@ -47,6 +48,7 @@ const HeroPage: React.FC = () => {
                     </Link>
                 )}
             </div>
+            <ProductCard/>
             <Footer/>
         </main>
     );
