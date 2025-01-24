@@ -1,15 +1,14 @@
-import styles from "@/component/styles.module.css";
+import Badge from "@mui/material/Badge";
+import {Icon} from "@iconify/react";
 import React, {useState} from "react";
+import styles from "@/component/styles.module.css";
 import {HiMenu} from "react-icons/hi";
-import { Icon } from "@iconify/react";
-import Badge from '@mui/material/Badge';
+import {Provider} from "react-redux";
+import store from "@/redux/Store";
+import ProductCard from "@/pages/homepage/product/Product";
+import Footer from "@/component/footer/Footer";
 
-
-
-
-
-const Navbar = () => {
-
+const Dashboard = () =>{
     const CartBadge = () => (
         <Badge color="secondary" showZero overlap="circular">
             <Icon icon="carbon:shopping-cart" width={30} height={30}/>
@@ -20,6 +19,7 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
+        <div>
         <nav className={styles.nav} >
             <div className='flex gap-3 items-center mb-4'>
                 <h1>🪡</h1>
@@ -44,6 +44,11 @@ const Navbar = () => {
                 </ul>
             )}
         </nav>
+            <Provider store={store}>
+                <ProductCard/>
+            </Provider>
+            <Footer/>
+        </div>
     )
 }
-export default Navbar;
+export default Dashboard
