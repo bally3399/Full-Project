@@ -3,7 +3,6 @@ import styles from "@/component/styles.module.css";
 import Navbar from "@/component/navbar/Navbar";
 import Footer from "@/component/footer/Footer";
 import Link from "next/link";
-import ProductCard from "@/pages/homepage/product/Product";
 import store from "@/redux/Store";
 import {Provider} from "react-redux";
 import image1 from "@/asset/image1.jpeg";
